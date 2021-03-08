@@ -94,7 +94,7 @@ This syntax is really useful when:
 Relationship declaration is done as follows:
 ```
 relationship (OneToMany | ManyToOne | OneToOne | ManyToMany) {
-  <from entity>[{<relationship name>[(<display field>)]}] to <to entity>[{<relationship name>[(<display field>)]}]+
+  <from entity>[{<relationship name>[(<join field>)]}] to <to entity>[{<relationship name>[(<join field>)]}]+
 }
 ```
 
@@ -102,7 +102,7 @@ relationship (OneToMany | ManyToOne | OneToOne | ManyToMany) {
   - `<from entity>` is the name of the entity owner of the relationship: the source,
   - `<to entity>` is the name of the entity where the relationship goes to: the destination,
   - `<relationship name>` is the name of the field having the other end as type,
-  - `<display field>` is the name of the field that should show up in select boxes (default: `id`),
+  - `<join field>` is the name of the field that should used for joins and show up in select boxes (default: `id`),
   - `required` whether the injected field is required.
   - `with jpaDerivedIdentifier` whether `@MapsId` is used for the association (applicable only for one-to-one)
   - And you can have more than one relationship body
